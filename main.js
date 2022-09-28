@@ -2,6 +2,9 @@
 // -----Card pop up-----
 let cartIcon = document.querySelector(".cart");
 let purchaseContainer = document.querySelector(".purchase");
+let header = document.querySelector(".header");
+let left = document.querySelector(".left");
+let right = document.querySelector(".right");
 
 cartIcon.addEventListener("click", () =>{
     if(purchaseContainer.classList.contains("block")){
@@ -11,19 +14,33 @@ cartIcon.addEventListener("click", () =>{
         purchaseContainer.classList.add("block");
         purchaseContainer.classList.remove("none");
     }
+});
+
+left.addEventListener("click", function(){
+
+  purchaseContainer.classList.add("none");
+  purchaseContainer.classList.remove("block");
+
+});
+
+right.addEventListener("click", function(){
+
+  purchaseContainer.classList.add("none");
+  purchaseContainer.classList.remove("block");
+
 })
+
+
 
 // -----Hamburger menus-----
 
 function openNav() {
     document.getElementById("sideNav").style.width = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
   }
   
   
   function closeNav() {
     document.getElementById("sideNav").style.width = "0";
-    document.body.style.backgroundColor = "hsl(0, 0%, 100%)";
   }
 
 // -----Lightbox-----
@@ -37,13 +54,18 @@ let images = document.querySelectorAll(".image");
 
 for(let i = 0; i < box.length; i++){
     images[i].addEventListener("click", () =>{
+          if(window.innerWidth > 1000){
+            lightbox.style.display = "block";
+          }
+          
         
-        lightbox.style.display = "block";
     });
 }
 
 closeLightbox.addEventListener("click", () => {
+  
     lightbox.style.display = "none";
+    
 });
 
 
@@ -215,6 +237,7 @@ add.addEventListener("click", function(){
 });
 
 deleteIcon.addEventListener("click", function(){
+  notif.style.display = "none";
   purchaseItem.style.display = "none";
   blank.style.display = "block";
 })

@@ -18,6 +18,7 @@ body{
     font-size: 1rem;
     min-height: 100vh;
     font-family: 'Kumbh Sans', sans-serif;
+    overflow-x: hidden;
 }
     
 .none{
@@ -256,7 +257,7 @@ body{
         height: 100%;
         width: 0;
         position: fixed;
-        z-index: 1;
+        z-index: 10;
         top: 0;
         left: 0;
         background-color: var(--clr-white);
@@ -357,6 +358,9 @@ body{
     transform: translateX(2px);
   }
 
+  .next, .previous, a{
+    -webkit-tap-highlight-color: transparent;
+  }
   
   .next {
     right: 10px;
@@ -365,8 +369,21 @@ body{
   .previous{
     left: 10px;
   }
+}
 
+@media only screen and (width > 600px){
 
+    body{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container{
+        width: 100%;
+        max-width: 600px;
+    }
+
+    
 }
 
 /* -------------------------------------------------------------------- */

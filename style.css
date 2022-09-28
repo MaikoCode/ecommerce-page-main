@@ -108,11 +108,15 @@ body{
 }
 
 .btn:hover{
-    opacity: .5;
+    opacity: .7;
 }
 .total{
     font-weight: 700;
     color: var(--clr-black);
+}
+.btn-2{
+    box-shadow: 0 14px 38px rgb(255 100 61 / 25%), 0 10px 20px rgb(255 100 61 / 25%);
+
 }
 .avatar{
     width: 40px;
@@ -723,6 +727,8 @@ body{
   .left .previous, .left .next{
     display: none;
   }
+
+  
   
     
 }
